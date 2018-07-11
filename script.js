@@ -9,14 +9,14 @@ document.querySelector(".calc-buttons").addEventListener("click", function(event
     
 function buttonClick(value) {
     if(isNaN(parseInt(event.target.innerText))) {
-        handleOperator(value);
+        handleSymbol(value);
     } else {
         handleNumber(value);
     }    
     rerender();
 } 
 
-function handleOperator(value) {
+function handleSymbol(value) {
     switch(value) {
         case 'C':   
             buffer = "0";
@@ -80,3 +80,19 @@ function flushOperation(intBuffer) {
         runningTotal *= intBuffer;
     }
 }
+
+// ////handler functions/////
+// handleSymbol
+// handleNumber
+// handleMath to capture previusOperator, 
+//     parse the screen number into a number, 
+//     set up flushOperation if the running total isn't 0
+//     set the screen number to 0
+// flushOperation to add/subtract/divide/multiply
+
+// ////variables to keep track of///// ////
+// buffer - string number on the screen
+// runningTotal
+// previousOperator
+// screen
+// intBuffer -screen number for calcs
